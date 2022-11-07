@@ -5,3 +5,5 @@
 ```
 docker compose up -d
 ```
+
+Run at localhos:9000
