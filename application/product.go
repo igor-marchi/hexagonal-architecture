@@ -29,17 +29,20 @@ func (p *Product) IsValid() (bool, error) {
 }
 
 func (p *Product) Enable() error {
-	if p.Price > 0 {
-		p.Status = ENABLE
-		return nil
+	if p.Price <= 0 {
+		return errors.New("the price must be greater than zero to enable the product")
 	}
 
-	return errors.New("the price must be greater than zero to enable the product")
+	p.Status = ENABLE
+	return nil
 }
 
 func (p *Product) Disable() error {
-	p.Status = DISABLE
+	if p.Price != 0 {
+		return errors.New("the price must be zero in order to have the product disable")
+	}
 
+	p.Status = DISABLE
 	return nil
 }
 
