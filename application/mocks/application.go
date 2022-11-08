@@ -48,18 +48,18 @@ func (mr *MockIProductInterfaceMockRecorder) Disable() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Disable", reflect.TypeOf((*MockIProductInterface)(nil).Disable))
 }
 
-// EnableD mocks base method.
-func (m *MockIProductInterface) EnableD() error {
+// Enable mocks base method.
+func (m *MockIProductInterface) Enable() error {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "EnableD")
+	ret := m.ctrl.Call(m, "Enable")
 	ret0, _ := ret[0].(error)
 	return ret0
 }
 
-// EnableD indicates an expected call of EnableD.
-func (mr *MockIProductInterfaceMockRecorder) EnableD() *gomock.Call {
+// Enable indicates an expected call of Enable.
+func (mr *MockIProductInterfaceMockRecorder) Enable() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EnableD", reflect.TypeOf((*MockIProductInterface)(nil).EnableD))
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Enable", reflect.TypeOf((*MockIProductInterface)(nil).Enable))
 }
 
 // GetId mocks base method.
