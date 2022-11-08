@@ -29,3 +29,25 @@ func (s *ProductService) Create(name string, price float64) (IProductInterface, 
 	}
 	return result, nil
 }
+
+func (s *ProductService) Enable(product IProductInterface) (IProductInterface, error) {
+	err := product.Enable()
+	if err != nil {
+		return &Product{}, err
+	}
+
+	result, err := s.Persistence.Save(product)
+
+	return result, nil
+}
+
+func (s *ProductService) Disable(product IProductInterface) (IProductInterface, error) {
+	err := product.Disable()
+	if err != nil {
+		return &Product{}, err
+	}
+
+	result, err := s.Persistence.Save(product)
+
+	return result, nil
+}
