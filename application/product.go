@@ -28,17 +28,17 @@ type IProductServiceInterface interface {
 	Disable(product IProductInterface) (IProductInterface, error)
 }
 
-type IProductReader interface {
+type IProductReaderInterface interface {
 	Get(id string) (IProductInterface, error)
 }
 
-type IProductWriter interface {
+type IProductWriterInterface interface {
 	Save(product IProductInterface) (IProductInterface, error)
 }
 
 type IProductPersistenceInterface interface {
-	IProductReader
-	IProductWriter
+	IProductReaderInterface
+	IProductWriterInterface
 }
 
 const (
